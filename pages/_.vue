@@ -4,6 +4,10 @@
 
 <script>
 export default {
+    async asyncData({isDev, route, store, env, params, query, req, res, redirect, error,$axios}) {
+        const data =await $axios.$get('/test')
+        console.log(data,'接口数据')
+    },
     data() {
         return {
             
