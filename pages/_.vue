@@ -1,8 +1,7 @@
-<template>
-    <div>一级动态路由
-        <!-- <render-page :currentComponents='currentComponents' />
-        <component :is="currentComponents.type" :key="currentComponents.key" :params="currentComponents.params" :pageData="pageData" /> -->
-    </div>
+<template lang="md">
+  # Hello World!
+
+  Current route is: {{ $route.path }}
 </template>
 
 <script>
