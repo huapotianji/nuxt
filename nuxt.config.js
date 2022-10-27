@@ -17,10 +17,16 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['assets/main.css'],
+  css: [
+    'assets/main.css',// 1. elementui各组件样式
+    // 加上 mavon-editor 组件要使用的样式 ++++
+    'mavon-editor/dist/css/index.css'
+  ],
+
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/mavon-editor', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
