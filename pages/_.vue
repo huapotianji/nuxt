@@ -18,7 +18,10 @@
 import { GaList } from "./data";
 export default {
     async asyncData({ isDev, route, store, env, params, query, req, res, redirect, error, $axios }) {
-        
+        // const data =await $axios.$get('/test')
+        // console.log(data,'接口数据')
+        const gaId = GaList.filter(item => req.headers.host.includes(item.Domain))[0].GACode
+        env.GOOGLE_ANALYTICS_ID = gaId
     },
     data() {
         return {
