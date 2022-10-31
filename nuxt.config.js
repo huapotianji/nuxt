@@ -27,9 +27,10 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/mavon-editor', mode: 'client' },
+    { src: '@/plugins/element', mode: 'client' },
   ],
-  env:{
-    GOOGLE_ANALYTICS_ID:'UA-111111-7'
+  env: {
+    GOOGLE_ANALYTICS_ID: 'UA-111111-7'
   },
 
 
@@ -40,6 +41,9 @@ export default {
   buildModules: [
     '@nuxtjs/google-analytics'
   ],
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
+  },
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
   },
@@ -75,6 +79,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    }
   },
   server: {
     port: 4001, // default: 3000
