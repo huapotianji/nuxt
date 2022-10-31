@@ -37,7 +37,7 @@ export default {
     error,
     $axios,
   }) {
-    console.log(route);
+    
   },
   data() {
     return {

@@ -39,8 +39,16 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    'nuxt-webpack-optimisations',
   ],
+  webpackOptimisations: {
+    features: {
+      // enable risky optimisations in dev only
+      hardSourcePlugin: process.env.NODE_ENV === 'development',
+      parallelPlugin: process.env.NODE_ENV === 'development',
+    }
+  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
   },
@@ -79,6 +87,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    analyze: true,
     extractCSS: true,
     optimization: {
       splitChunks: {
@@ -91,7 +100,33 @@ export default {
           }
         }
       }
-    }
+    },
+    babel: {
+      plugins: [
+        // 'transform-remove-console',
+        [
+          'component',
+          {
+            libraryName: 'element-ui',
+            styleLibraryName: 'theme-chalk'
+          }
+        ]
+      ]
+    },
+    html: {
+      minify: {
+        removeComments: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        removeTagWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true
+      }
+    },
   },
   server: {
     port: 4001, // default: 3000
