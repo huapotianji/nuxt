@@ -29,33 +29,17 @@ export default {
     { src: '@/plugins/mavon-editor', mode: 'client' },
     { src: '@/plugins/element', mode: 'client' },
   ],
-  env: {
-    GOOGLE_ANALYTICS_ID: 'UA-111111-7'
-  },
-
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/google-analytics',
+    
   ],
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
   },
-  googleAnalytics: {
-    id: process.env.GOOGLE_ANALYTICS_ID, // Use as fallback if no runtime config is provided
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: process.env.GOOGLE_ANALYTICS_ID
-    }
-  },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/markdownit'
   ],

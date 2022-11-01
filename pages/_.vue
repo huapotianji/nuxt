@@ -36,9 +36,7 @@ export default {
     redirect,
     error,
     $axios,
-  }) {
-    
-  },
+  }) {},
   data() {
     return {
       currentComponents: {
@@ -52,17 +50,76 @@ export default {
       },
     };
   },
+  head() {
+    let metaConfig = {
+      title: "title",
+      htmlAttrs: {
+        lang: "en",
+      },
+      meta: [
+        { charset: "utf-8" },
+        {
+          hid: "description",
+          name: "description",
+          content: "desc",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: "keywords",
+        },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "AdsBot-Google", content: "noindex" },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: `https://www.hotdeals.com/public/images/favicon.ico`,
+        },
+        {
+          rel: "prefetch",
+          href: "https://googleads.g.doubleclick.net",
+        },
+        { rel: "canonical", href: 'hostOrigin' },
+      ],
+      script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=G-59TC1G3H2D`,
+          async: "true",
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+                      function gtag(){dataLayer.push(arguments);}
+                      gtag('js', new Date());   
+                      gtag('config', 'G-59TC1G3H2D');            
+                          `,
+          type: "text/javascript",
+          charset: "utf-8",
+          async: true,
+        },
+      ],
+      __dangerouslyDisableSanitizers: ["script"],
+    };
+    return metaConfig;
+  },
   mounted() {
     console.log(this.$route, "路由信息");
+    gtag("event", "impression", {
+      event_category: 'test-category',
+      event_label: "test-lable",
+      non_interaction: true,
+      value: 1,
+    });
   },
   methods: {
     getMdHtml() {},
     uploadContentImg() {},
     delContentImg() {},
-    goOut(){
-      console.log('111')
-      window.open('http://localhost:5003/coupons/kohls/','_blank')
-    }
+    goOut() {
+      console.log("111");
+      window.open("http://localhost:5003/coupons/kohls/", "_blank");
+    },
   },
 };
 </script>

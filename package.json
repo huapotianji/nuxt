@@ -39,7 +39,6 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/proxy": "^2.1.0",
     "babel-plugin-component": "^1.1.1",
     "cookie-universal-nuxt": "^2.1.5",
