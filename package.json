@@ -43,7 +43,6 @@
     "@nuxtjs/proxy": "^2.1.0",
     "babel-plugin-component": "^1.1.1",
     "cookie-universal-nuxt": "^2.1.5",
-    "nuxt-webpack-optimisations": "^2.2.5",
     "sass": "^1.48.0",
     "sass-loader": "^10.1.1",
     "vue-google-adsense": "^1.10.1",

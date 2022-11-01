@@ -40,15 +40,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/google-analytics',
-    'nuxt-webpack-optimisations',
   ],
-  webpackOptimisations: {
-    features: {
-      // enable risky optimisations in dev only
-      hardSourcePlugin: process.env.NODE_ENV === 'development',
-      parallelPlugin: process.env.NODE_ENV === 'development',
-    }
-  },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
   },
@@ -87,23 +79,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    analyze: true,
     extractCSS: true,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
-      }
-    },
     babel: {
       plugins: [
-        // 'transform-remove-console',
         [
           'component',
           {
