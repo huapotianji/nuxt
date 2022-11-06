@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>首页</div>
-    <Tutorial />
+    <!-- <Tutorial /> -->
   </div>
 </template>
 
