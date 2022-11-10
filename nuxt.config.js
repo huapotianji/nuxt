@@ -18,8 +18,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'assets/main.css',// 1. elementui各组件样式
-    // 加上 mavon-editor 组件要使用的样式 ++++
+    'assets/main.css',
     'mavon-editor/dist/css/index.css'
   ],
 
