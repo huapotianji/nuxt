@@ -34,10 +34,6 @@ export default {
   buildModules: [
     
   ],
-  publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
-  },
-
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/markdownit'
