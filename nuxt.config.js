@@ -32,7 +32,7 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   buildModules: [
-
+    'nuxt-webpack-optimisations',
   ],
   modules: [
     '@nuxtjs/axios',
@@ -43,6 +43,13 @@ export default {
     ['nuxt-leaflet', { /* module options */ }],
     '@luxdamore/nuxt-prune-html'
   ],
+  webpackOptimisations: {
+    features: {
+      // enable risky optimisations in dev only
+      hardSourcePlugin: process.env.NODE_ENV === 'development',
+      parallelPlugin: process.env.NODE_ENV === 'development',
+    }
+  },
   pruneHtml: {
     enabled: true, // `true` in production
     hideGenericMessagesInConsole: false, // `false` in production
