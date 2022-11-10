@@ -1021,7 +1021,7 @@
 
 "@luxdamore/nuxt-prune-html@^2.0.6":
   version "2.0.6"
-  resolved "https://registry.npmjs.org/@luxdamore/nuxt-prune-html/-/nuxt-prune-html-2.0.6.tgz"
+  resolved "https://registry.yarnpkg.com/@luxdamore/nuxt-prune-html/-/nuxt-prune-html-2.0.6.tgz#201d6b5f60168e1c6f03216317c27d84603bc9c8"
   integrity sha512-VUuOy9bXZkAEjqsQEyyTc3s4djXiiglQaZPVVfZ7ULZuem+yuu2hHnWXmiox9fhO3hSBvMBlcbBtcbQfBXz4Nw==
   dependencies:
     cheerio "^1.0.0-rc.5"
