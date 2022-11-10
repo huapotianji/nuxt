@@ -171,6 +171,7 @@ export default {
     extractCSS: true,
     babel: {
       plugins: [
+        'transform-remove-console',
         [
           'component',
           {
