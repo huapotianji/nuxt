@@ -36,7 +36,8 @@ export default {
   ],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    'nuxt-speedkit'
   ],
   markdownit: {
     preset: 'default',
@@ -46,6 +47,60 @@ export default {
       'markdown-it-div',
       'markdown-it-attrs'
     ]
+  },
+  speedkit: {
+    detection: {
+      performance: true,
+      browserSupport: true
+    },
+    performanceMetrics: {
+      device: {
+        hardwareConcurrency: { min: 2, max: 48 },
+        deviceMemory: { min: 2 }
+      },
+      timing: {
+        fcp: 800,
+        dcl: 1200
+      }
+    },
+    targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
+    componentAutoImport: false,
+    componentPrefix: undefined,
+    /**
+     * IntersectionObserver rootMargin for Compoennts and Assets
+     */
+    lazyOffset: {
+      component: '0%',
+      asset: '0%'
+    },
+
+    loader: {
+      dataUri: null,
+      size: '100px',
+      backgroundColor: 'grey'
+    }
+    
+  },
+
+  image: {
+    screens: {
+      default: 320,
+      xxs: 480,
+      xs: 576,
+      sm: 768,
+      md: 996,
+      lg: 1200,
+      xl: 1367,
+      xxl: 1600,
+      '4k': 1921
+    },
+
+    domains: ['img.youtube.com', 'i.vimeocdn.com'],
+
+    alias: {
+      youtube: 'https://img.youtube.com',
+      vimeo: 'https://i.vimeocdn.com',
+    }
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

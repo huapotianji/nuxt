@@ -30,6 +30,7 @@
     "nuxt": "^2.15.8",
     "nuxt-font-loader-strategy": "^1.1.10",
     "nuxt-precompress": "^0.5.9",
+    "nuxt-speedkit": "^2.1.2",
     "qs": "^6.10.3",
     "v-copy": "^0.1.0",
     "v-owl-carousel": "^1.0.8",
