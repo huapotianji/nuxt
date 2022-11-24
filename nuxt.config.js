@@ -27,6 +27,7 @@ export default {
   plugins: [
     { src: '@/plugins/mavon-editor', mode: 'client' },
     { src: '@/plugins/element', mode: 'client' },
+    { src: '@/plugins/echarts', mode: 'client'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -133,7 +134,7 @@ export default {
     extractCSS: true,
     babel: {
       plugins: [
-        'transform-remove-console',
+        // 'transform-remove-console',
         [
           'component',
           {
