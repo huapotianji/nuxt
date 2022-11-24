@@ -31,25 +31,14 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  buildModules: [
-    'nuxt-webpack-optimisations',
-  ],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
-    'nuxt-speedkit',
     'nuxt-leaflet',
     // With options
     ['nuxt-leaflet', { /* module options */ }],
     '@luxdamore/nuxt-prune-html'
   ],
-  webpackOptimisations: {
-    features: {
-      // enable risky optimisations in dev only
-      hardSourcePlugin: process.env.NODE_ENV === 'development',
-      parallelPlugin: process.env.NODE_ENV === 'development',
-    }
-  },
   pruneHtml: {
     enabled: true, // `true` in production
     hideGenericMessagesInConsole: false, // `false` in production
@@ -110,40 +99,6 @@ export default {
       'markdown-it-attrs'
     ]
   },
-  speedkit: {
-    detection: {
-      performance: true,
-      browserSupport: true
-    },
-    performanceMetrics: {
-      device: {
-        hardwareConcurrency: { min: 2, max: 48 },
-        deviceMemory: { min: 2 }
-      },
-      timing: {
-        fcp: 800,
-        dcl: 1200
-      }
-    },
-    targetFormats: ['webp', 'avif', 'jpg|jpeg|png|gif'],
-    componentAutoImport: false,
-    componentPrefix: undefined,
-    /**
-     * IntersectionObserver rootMargin for Compoennts and Assets
-     */
-    lazyOffset: {
-      component: '0%',
-      asset: '0%'
-    },
-
-    loader: {
-      dataUri: null,
-      size: '100px',
-      backgroundColor: 'grey'
-    }
-
-  },
-
   image: {
     screens: {
       default: 320,
