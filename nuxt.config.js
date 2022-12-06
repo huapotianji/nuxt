@@ -25,8 +25,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/mavon-editor', mode: 'server' },
-    { src: '@/plugins/element', mode: 'server' },
+    { src: '@/plugins/mavon-editor', mode: 'client' },
+    { src: '@/plugins/element', mode: 'client' },
     { src: '@/plugins/echarts', mode: 'client'},
   ],
 
