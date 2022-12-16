@@ -18,7 +18,9 @@
       <el-button type="info" plain>信息按钮</el-button>
       <el-button type="warning" plain>警告按钮</el-button>
       <el-button type="danger" plain>危险按钮</el-button>
-      </client-only>
+    </client-only>
+    <div>
+    </div>
   </div>
 </template>
 <script>
