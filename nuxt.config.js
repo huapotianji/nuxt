@@ -183,12 +183,30 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
+    // 开启代理 (如果需要判断线上线下环境，可以通过 process.env.NODE_ENV !== 'production' 来判断)
+    proxy: true,
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://127.0.0.1:3010',//测试
+    // baseURL: 'https://api.map.baidu.com',//测试
     // baseURL: 'http://127.0.0.1:3010',//预发
     // baseURL: 'http://127.0.0.1:3010',//生产
+    prefix: '/api',
+    // 跨域请求时是否需要使用凭证
+    credentials: true
   },
-
+  proxy: {
+    '/api': {
+      // 目标接口域
+      target: 'https://api.map.baidu.com',
+      // 全局配置是否跨域
+      changeOrigin: true,
+      pathRewrite: {
+        // 单个配置是否跨域
+        // changeOrigin: true
+        // 把 '/api' 替换成 '/'，具体需要替换为 '' 还是 '/' 看自己习惯
+        '^/api': '/'
+      }
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extractCSS: true,

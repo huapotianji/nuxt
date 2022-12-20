@@ -4,6 +4,17 @@
       <el-button plain @click="changeMap(1)">地球模式</el-button>
       <el-button plain @click="changeMap(2)">标准模式</el-button>
       <el-button plain @click="changeMap(3)">卫星地图</el-button>
+      <el-input
+        placeholder="请输入ip地址"
+        v-model="inputValue"
+        class="input-with-select"
+      >
+        <el-button
+          slot="append"
+          icon="el-icon-search"
+          @click="getIpAdress"
+        ></el-button>
+      </el-input>
     </client-only>
     <div id="container"></div>
   </div>
@@ -13,6 +24,7 @@ export default {
   data() {
     return {
       map: "",
+      inputValue: "",
     };
   },
   methods: {
@@ -26,6 +38,19 @@ export default {
         this.map.setMapType(BMAP_SATELLITE_MAP);
       }
     },
+    async getIpAdress() {
+      console.log("获取ip地址");
+      let res = await this.$axios({
+        url: "/location/ip",
+        params: {
+          ak: "W8SHbsM1gL0DmoSSebMpSMXIWCFS0GUh",
+          ip: this.inputValue,
+          coor: "bd09ll",
+        },
+        method: "Get",
+      })
+      console.log(res,'res')
+    },
   },
   mounted() {
     this.map = new BMapGL.Map("container");
@@ -37,7 +62,7 @@ export default {
     // 比例尺控件坐标
     let opts = {
       offset: new BMapGL.Size(150, 0),
-    }
+    };
     var scaleCtrl = new BMapGL.ScaleControl(opts); // 添加比例尺控件
     this.map.addControl(scaleCtrl);
     let zoomCtrl = new BMapGL.ZoomControl(); // 添加缩放控件
@@ -69,5 +94,12 @@ export default {
 #container {
   width: 100%;
   height: calc(100vh - 40px);
+}
+.input-with-select {
+  width: 50%;
+  margin: 10px 0;
+}
+.input-with-select .el-input-group__prepend {
+  background-color: #fff;
 }
 </style>
