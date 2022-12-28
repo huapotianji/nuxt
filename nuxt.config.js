@@ -28,6 +28,7 @@ export default {
     { src: '@/plugins/mavon-editor', mode: 'client' },
     { src: '@/plugins/element', mode: 'client' },
     { src: '@/plugins/echarts', mode: 'client'},
+    { src: '@/plugins/three', mode: 'client'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
