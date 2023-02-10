@@ -190,14 +190,16 @@ export default {
     // baseURL: 'https://api.map.baidu.com',//测试
     // baseURL: 'http://127.0.0.1:3010',//预发
     // baseURL: 'http://127.0.0.1:3010',//生产
+    // 给每个请求带上api
     prefix: '/api',
     // 跨域请求时是否需要使用凭证
-    credentials: true
+    credentials: false
   },
   proxy: {
+    // 遇到/api请求时代理到target
     '/api': {
       // 目标接口域
-      target: 'https://api.map.baidu.com',
+      target: 'http://127.0.0.1:3015',
       // 全局配置是否跨域
       changeOrigin: true,
       pathRewrite: {
