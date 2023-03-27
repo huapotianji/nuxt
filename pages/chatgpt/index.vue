@@ -43,7 +43,7 @@ export default {
       if (res.data.code) {
         Message.success(res.data.msg);
         this.loading = false;
-        this.value = res.data.response.choices[0].text;
+        this.value = res.data?.response?.choices[0]?.text;
       } else {
         Message.error(res.data.msg);
       }
