@@ -24,14 +24,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.link-body{
+.link-body {
   margin: 10px 0;
-  text-align: center;
-  a{
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  a {
+    padding: 0 10px;
     border: 1px solid rgb(199, 193, 193);
     margin-right: 10px;
-    &:hover{
+    color: #000;
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    &:hover {
       background: #e1c3c3;
     }
   }
