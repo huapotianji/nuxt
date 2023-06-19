@@ -66,5 +66,6 @@ export default {
   background-color: lightblue;
   transition: height 0.5s;
   overflow: hidden;
+  cursor: pointer;
 }
 </style>
