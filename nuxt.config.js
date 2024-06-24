@@ -9,7 +9,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'google-adsense-account', content: 'ca-pub-1995925418592296' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -35,9 +36,9 @@ export default {
   plugins: [
     { src: '@/plugins/mavon-editor', mode: 'client' },
     { src: '@/plugins/element', mode: 'client' },
-    { src: '@/plugins/echarts', mode: 'client'},
-    { src: '@/plugins/three', mode: 'client'},
-    { src: '@/plugins/googleAds', mode: 'client'},
+    { src: '@/plugins/echarts', mode: 'client' },
+    { src: '@/plugins/three', mode: 'client' },
+    { src: '@/plugins/googleAds', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -167,7 +168,7 @@ export default {
       size: '100px',
       backgroundColor: 'grey'
     }
-    
+
   },
 
   image: {
