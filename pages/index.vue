@@ -14,6 +14,12 @@
       <a target="_blank" href="/video">video</a>
     </div>
     <Tutorial />
+    <ads
+      :adsData="adsDataListOne"
+      :adsStyle="adsStyleList"
+      :classId="'ads-one'"
+      :extraData="aboutExtraData"
+    />
     <test />
   </div>
 </template>
@@ -21,6 +27,31 @@
 <script>
 export default {
   name: "IndexPage",
+  data() {
+    return {
+      adsStyleList: {
+        height: "120px",
+        advertisement: "ADS",
+        isShowAds: "",
+        classId: "list",
+      },
+      adsDataListOne: {
+        capubId: "ca-pub-1995925418592296",
+        adStot: "",
+        advertisement: "",
+      },
+      aboutExtraData: {
+        moreText: "Read more",
+        isMobile: "",
+        page_type: "",
+        countryCode: "",
+        FontColor: "",
+        Transparent: "",
+        ID: "",
+        out_link_text: "Click to see more about",
+      },
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>

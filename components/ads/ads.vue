@@ -67,6 +67,9 @@ export default {
       const targetNode = document.querySelector(
         `.${this.classId} ins.adsbygoogle`
       )
+      if (!targetNode) {
+        return
+      }
       const config = { attributes: true, childList: true, subtree: true }
       const callback = (mutationList, observer) => {
         for (const mutation of mutationList) {
