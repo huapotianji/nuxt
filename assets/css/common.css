@@ -1,0 +1,103 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+body{
+    background:#fff;
+    color:#000;
+    /* font-size:100%; */
+    /* font-family: 'Microsoft yahei',Verdana, Arial, Helvetica, sans-serif; */
+    font-family: Poppins;
+}
+*{
+    box-sizing: border-box;
+}
+th,caption {
+    font-size:14px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size:100%;
+}
+address, caption, cite, code, dfn, em, th, var {
+    font-style:normal; font-weight:normal;
+}
+a{
+    color: #333;
+    text-decoration:none;
+}
+img{
+    border:none;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+/* ol,ul,li {
+    list-style:none;
+} */
+li{
+    vertical-align:top;
+}
+input, textarea, select, button {
+    font:14px 'Microsoft yahei',Verdana, Arial, Helvetica, sans-serif; }
+table {
+    border-collapse:collapse;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height:0;
+    clear:both;
+    visibility: hidden;
+}
+.clearfix { *zoom:1; }
+/* .adswrapper {
+    width: 100% !important;
+    height: 100% !important;
+}
+.adswrapper ins {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0px!important;
+}
+.adswrapper iframe{
+    width: 100%!important;
+    height: 100%!important;
+} */
+/* @font-face{ */
+    /* font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/Poppins-Regular.eot');
+    src: url('./fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/Poppins-Regular.woff2') format('woff2'),
+         url('./fonts/Poppins-Regular.woff') format('woff'),
+         url('./fonts/Poppins-Regular.ttf') format('truetype'),
+         url('./fonts/Poppins-Regular.svg') format('svg');
+}
+
+@font-face{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/Poppins-Medium.eot');
+    src: url('./fonts/Poppins-Medium.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/Poppins-Medium.woff2') format('woff2'),
+         url('./fonts/Poppins-Medium.woff') format('woff'),
+         url('./fonts/Poppins-Medium.ttf') format('truetype'),
+         url('./fonts/Poppins-Medium.svg') format('svg');
+}
+@font-face{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('./fonts/Poppins-SemiBold.eot');
+    src: url('./fonts/Poppins-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Poppins-SemiBold.woff2') format('woff2'),
+        url('./fonts/Poppins-SemiBold.woff') format('woff'),
+        url('./fonts/Poppins-SemiBold.ttf') format('truetype'),
+        url('./fonts/Poppins-SemiBold.svg') format('svg');
+} */

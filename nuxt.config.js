@@ -13,7 +13,14 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      {
+        src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1995925418592296`,
+        async: "true",
+      },
+    ],
+    __dangerouslyDisableSanitizers: ["script"],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -29,6 +36,7 @@ export default {
     { src: '@/plugins/element', mode: 'client' },
     { src: '@/plugins/echarts', mode: 'client'},
     { src: '@/plugins/three', mode: 'client'},
+    { src: '@/plugins/googleAds', mode: 'client'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
