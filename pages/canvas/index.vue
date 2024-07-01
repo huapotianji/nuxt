@@ -1,13 +1,19 @@
 <template>
   <div>
     <canvas ref="myCanvas"></canvas>
+    <div class="canvas-wrap">
+      <canvas-term :chartData="historyChart" />
+    </div>
   </div>
 </template>
 <script>
+import { historyData } from "./data";
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      historyChart: historyData,
+    };
   },
   mounted() {
     let myCanvas = this.$refs.myCanvas;
@@ -30,4 +36,7 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+.canvas-wrap {
+  max-width: 820px;
+}
 </style>
